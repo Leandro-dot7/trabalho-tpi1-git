@@ -10,20 +10,19 @@
      * @return Resultado da operação
      */
     public double calcular(String operacao, int a, int b) {
-        switch (operacao.toLowerCase()) {
-            case "divisao":
-                if (b == 0) {
-                    throw new IllegalArgumentException("Divisão por zero não é permitida!");
-                }
-                return (double) a / b;
-            case "subtracao":
-                return a - b;
-            case "multiplicacao":
-                return a * b;
-            case "soma":
-                return a + b;
-            
-        }
+        case "soma":
+            return a + b;
+        case "subtracao":
+            return a - b;
+        case "multiplicacao":
+            return a * b;
+        case "divisao":
+            if (b == 0) {
+                throw new IllegalArgumentException("Divisão por zero não é permitida!");
+            }
+            return (double) a / b;
+        default:
+            throw new IllegalArgumentException("Operação inválida: " + operacao);
     }
 
     // Método principal para testar
